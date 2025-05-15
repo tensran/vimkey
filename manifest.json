@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "QuickVimFox",
+  "version": "0.0.1",
+  "description": "sample vim mode plugin",
+  "permissions": [
+    "tabs",
+    "storage",
+    "clipboardRead",
+    "clipboardWrite",
+    "history",
+    "sessions",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "style.css"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "icons": {}
+}

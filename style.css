@@ -1,0 +1,177 @@
+/* ... existing styles from previous version ... */
+
+.quickvimfox-command-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1e1e1e;
+  /* Darker command bar */
+  color: white;
+  padding: 4px 8px;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  /* Monospaced for command line */
+  font-size: 13px;
+  z-index: 2147483647;
+  /* Max z-index */
+  box-sizing: border-box;
+  display: none;
+  /* Initially hidden */
+  align-items: center;
+  border-top: 1px solid #444;
+}
+
+.quickvimfox-command-prefix {
+  margin-right: 4px;
+}
+
+.quickvimfox-command-bar input[type="text"] {
+  flex-grow: 1;
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 2px;
+  font-size: 13px;
+  font-family: inherit;
+  /* Inherit from parent command-bar */
+  outline: none;
+}
+
+.quickvimfox-message-display {
+  position: fixed;
+  bottom: 30px;
+  /* Position above where command bar would be */
+  left: 10px;
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  border: 1px solid #555;
+  border-radius: 3px;
+  z-index: 2147483647;
+  /* Max z-index */
+  display: none;
+  /* Initially hidden */
+  max-width: 80%;
+  white-space: pre-wrap;
+  /* For multi-line messages like :set output */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure hints are still on top of most things, but command bar/messages on top of hints */
+.quickvimfox-hint {
+  position: absolute;
+  z-index: 2147483640;
+  /* Slightly lower than command bar but high */
+  padding: 2px 4px;
+  background-color: orange;
+  color: black;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  border: 1px solid #555;
+  border-radius: 3px;
+  text-transform: uppercase;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.quickvimfox-hint-typed {
+  background-color: #ff7f50 !important;
+}
+
+.quickvimfox-search-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  padding: 5px 10px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  z-index: 2147483646;
+  /* Below command bar but above hints */
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.quickvimfox-command-line-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #222;
+  /* Darker background */
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  z-index: 999998;
+  /* Same as search bar, ensure one is hidden when other is active */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  /* Stack input and display */
+}
+
+.quickvimfox-command-line-bar {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+}
+
+.quickvimfox-command-line-bar span.quickvimfox-colon-prefix {
+  margin-right: 5px;
+}
+
+.quickvimfox-command-line-input {
+  flex-grow: 1;
+  background-color: transparent;
+  /* Transparent background */
+  color: white;
+  border: none;
+  padding: 3px;
+  font-size: 14px;
+  font-family: inherit;
+  /* Inherit font */
+}
+
+.quickvimfox-command-line-input:focus {
+  outline: none;
+}
+
+.quickvimfox-command-display {
+  padding: 0px 10px 5px 10px;
+  /* Padding for display area */
+  max-height: 150px;
+  /* Limit height */
+  overflow-y: auto;
+  /* Scroll if content overflows */
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.quickvimfox-command-display ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 5px 0 0 0;
+}
+
+.quickvimfox-command-display li {
+  padding: 2px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.quickvimfox-buffer-idx {
+  font-weight: bold;
+  color: orange;
+  /* Highlight index */
+  margin-right: 8px;
+}
+
+/* ... rest of search bar styles ... */
